@@ -4,6 +4,8 @@ import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
 import Spinner from '../ui/Spinner'; // Using Spinner for a better loading experience
 import { POLICE_STATION_LOCATION } from '../../lib/dummyData';
+import { MdLocalPolice } from "react-icons/md";
+
 
 // Dynamic imports to avoid SSR issues with Leaflet
 const MapContainer = dynamic(() => import('react-leaflet').then(m => m.MapContainer), { ssr: false });
@@ -22,7 +24,7 @@ export default function MapView({ alerts, incidents, families, center, zoom = 12
       // We create the icons here, once Leaflet is loaded
       setIcons({
         police: new L.Icon({
-          iconUrl: 'https://attic.sh/zo6whrrgga27un7oves9n2umyr8j',
+          iconUrl: MdLocalPolice,
           iconSize: [30, 30],
           iconAnchor: [25, 50],
           popupAnchor: [0, -50],
@@ -60,7 +62,7 @@ export default function MapView({ alerts, incidents, families, center, zoom = 12
   const mapCenter = center || [POLICE_STATION_LOCATION.lat, POLICE_STATION_LOCATION.lng];
 
   return (
-    <MapContainer center={mapCenter} zoom={zoom} style={{ height: '100%', width: '100%', borderRadius: '8px' }}>
+    <MapContainer center={mapCenter} className='z-20' zoom={zoom} style={{ height: '100%', width: '100%', borderRadius: '8px' }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

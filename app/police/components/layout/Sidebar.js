@@ -14,12 +14,13 @@ export default function Sidebar({
   incidents,
   families,
   onSelectItem,
-  selectedItemId
+  selectedItemId,
+  isOpen = false
 }) {
   const [isFamiliesOpen, setIsFamiliesOpen] = useState(true);
 
   return (
-    <aside className="w-96 bg-gray-50 border-r border-gray-200 flex flex-col h-full">
+    <aside className={`w-96 bg-gray-50 border-r border-gray-200 flex flex-col h-full absolute left-0 top-0 bottom-0 z-50 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       {/* Panic Alerts Section */}
       <div className="p-4 border-b border-gray-200">
         <h2 className="font-bold text-lg text-red-600 flex items-center">

@@ -5,6 +5,7 @@ import { getDistance } from "geolib";
 import Spinner from "../ui/Spinner";
 import { FamilyIcon } from "../icons/FamilyIcon";
 
+
 // Dynamically import MapView to prevent SSR issues with Leaflet
 const MapView = dynamic(() => import("./MapView"), {
   ssr: false,

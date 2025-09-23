@@ -19,6 +19,7 @@ import {
 // This is the main component that assembles the entire dashboard.
 export default function PoliceDashboardPage() {
   const [loading, setLoading] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // State to hold all data
   const [alerts, setAlerts] = useState([]);
@@ -87,14 +88,15 @@ export default function PoliceDashboardPage() {
 
   return (
     <div className="h-screen w-screen flex flex-col font-sans bg-gray-100 overflow-hidden">
-      <Header />
-      <div className="flex flex-1 overflow-hidden">
+      <Header onToggleSidebar={() => setIsSidebarOpen((v) => !v)} />
+      <div className="relative flex flex-1 overflow-hidden">
         <Sidebar
           alerts={alerts}
           incidents={incidents}
           families={families}
           onSelectItem={handleSelectItem}
           selectedItemId={selectedItem ? selectedItem.data.id : null}
+          isOpen={isSidebarOpen}
         />
         <main className="flex-1 p-4 h-full">
           {renderMainContent()}
