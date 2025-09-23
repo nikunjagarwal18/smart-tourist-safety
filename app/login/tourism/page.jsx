@@ -1,16 +1,15 @@
-"use client";
-
+"use client"
 import { useState } from 'react';
 
-// This is a self-contained component for the login/signup page.
-// The Navbar and useRouter components have been removed as they are external dependencies.
+// This is a self-contained component for the tourism login/signup page.
+// External dependencies like Navbar and useRouter are removed for a single-file build.
 export default function App() {
   const [loginType, setLoginType] = useState('login'); // 'login' or 'signup'
   const [formData, setFormData] = useState({ name: '', id: '', location: '', email: '', phone: '' });
   const [message, setMessage] = useState({ text: '', type: '' });
   const [isLoading, setIsLoading] = useState(false);
 
-  const LOCATION_OPTIONS = ['Barrackpore Division', 'Kolkata North Division', 'Howrah City Police', 'Kolkata Head Office', 'Darjeeling District Office', 'Siliguri Regional Office'];
+  const LOCATION_OPTIONS = ['Kolkata Head Office', 'Darjeeling District Office', 'Siliguri Regional Office'];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -55,13 +54,13 @@ export default function App() {
   const formConfig = {
     login: {
       emailLabel: 'Email',
-      idLabel: 'ID',
-      locationLabel: 'Location',
+      idLabel: 'Department ID',
+      locationLabel: 'Office Location',
     },
     signup: {
-      nameLabel: 'DGP Full Name',
-      idLabel: 'Choose an ID',
-      locationLabel: 'Location',
+      nameLabel: 'Head of Dept. Name',
+      idLabel: 'Choose a Department ID',
+      locationLabel: 'Office Location',
       emailLabel: 'Email',
       phoneLabel: 'Phone Number',
     },
@@ -71,7 +70,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6">
       <div className="max-w-xl w-full bg-white p-6 sm:p-8 rounded-2xl shadow-xl border border-gray-200">
-        <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">Official Portal</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-900 mb-6">Tourism Department Portal</h2>
         
         <div className="p-1 bg-gray-200 rounded-xl flex relative">
           <div 
