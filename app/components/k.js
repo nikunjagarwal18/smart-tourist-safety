@@ -1,4 +1,3 @@
-
 const MapIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 10V7" />
@@ -21,8 +20,8 @@ export default function K(p) {
   const Wrapper = ({ icon, hd, txt }) => (
       <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl text-center group transition-all duration-300 cursor-pointer">
           {icon}
-          <h3 className="mt-6 text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{hd}</h3>
-          <p className="mt-3 text-gray-600 text-base ">
+          <h3 className="mt-6 text-2xl font-bold text-black group-hover:text-blue-600 transition-colors duration-300">{hd}</h3>
+          <p className="mt-3 text-black text-base ">
               {txt}
           </p>
       </div>

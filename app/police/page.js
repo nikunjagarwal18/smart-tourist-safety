@@ -17,7 +17,7 @@ import {
 
 export default function PoliceDashboardPage() {
   const [loading, setLoading] = useState(true);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   const [alerts, setAlerts] = useState([]);
   const [incidents, setIncidents] = useState([]);
@@ -74,8 +74,8 @@ export default function PoliceDashboardPage() {
     }
   };
 
-  return (
-    <div className="h-screen w-screen flex flex-col font-sans bg-gray-50 overflow-hidden">
+   return (
+    <div className="h-screen w-screen flex flex-col font-sans bg-background text-foreground overflow-hidden">
       <Header onToggleSidebar={() => setIsSidebarOpen((v) => !v)} />
       <div className="relative flex flex-1 overflow-hidden">
         <Sidebar
@@ -86,8 +86,8 @@ export default function PoliceDashboardPage() {
           selectedItemId={selectedItem ? selectedItem.data.id : null}
           isOpen={isSidebarOpen}
         />
-        <main className="flex-1 p-8 h-full">
-          <div className="h-full bg-white rounded-2xl shadow-xl border border-gray-200">
+        <main className="flex-1 p-4 md:p-6 h-full transition-all duration-300" style={{ marginLeft: isSidebarOpen ? '24rem' : '0' }}>
+           <div className="h-full bg-card-background rounded-xl shadow-lg border border-border-color overflow-hidden">
             {renderMainContent()}
           </div>
         </main>

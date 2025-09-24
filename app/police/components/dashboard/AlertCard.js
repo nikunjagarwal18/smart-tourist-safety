@@ -22,15 +22,15 @@ export default function AlertCard({ alert, isSelected, onClick }) {
       onClick={onClick}
       className={`p-3 mb-2 rounded-lg cursor-pointer transition-all duration-200 border-l-4 ${
         isSelected
-          ? "bg-red-100 border-red-500 shadow-md"
-          : "bg-white border-red-300 hover:bg-red-50 hover:shadow-sm"
+          ? "bg-red-500/20 border-red-500 shadow-lg shadow-red-500/20"
+          : "bg-card-background border-red-800 hover:bg-gray-700"
       }`}
     >
       <div className="flex justify-between items-center">
-        <p className="font-bold text-gray-800">{alert.tourist.name}</p>
-        <p className="text-xs text-red-700 font-semibold">{timeSince(alert.timestamp)}</p>
+        <p className="font-bold text-gray-100">{alert.tourist.name}</p>
+        <p className="text-xs text-red-400 font-semibold">{timeSince(alert.timestamp)}</p>
       </div>
-      <p className="text-sm text-gray-600">ABC ID: {alert.tourist.abcId}</p>
+      <p className="text-sm text-gray-400">ABC ID: {alert.tourist.abcId}</p>
     </div>
   );
 }

@@ -57,6 +57,20 @@ export const reportedIncidents = [
   },
 ];
 
+export const historicalPanicAlerts = [
+  { id: "hist-sos-001", tourist: { name: "Ravi Kumar" }, location: { lat: 22.76, lng: 88.36 }, timestamp: "2025-09-21T10:00:00Z", type: 'panic' },
+  { id: "hist-sos-002", tourist: { name: "Priya Patel" }, location: { lat: 22.77, lng: 88.38 }, timestamp: "2025-09-20T18:30:00Z", type: 'panic' },
+];
+
+export const historicalIncidents = [
+  { id: "hist-inc-001", type: "Theft", location: { lat: 22.765, lng: 88.375 }, timestamp: "2025-09-21T14:00:00Z" },
+  { id: "hist-inc-002", type: "Harassment", location: { lat: 22.75, lng: 88.35 }, timestamp: "2025-09-19T12:00:00Z" },
+];
+
+export const resolvedEfirs = [
+  { id: "efir-001", details: "Theft case from 21/09 resolved.", location: { lat: 22.765, lng: 88.375 }, timestamp: "2025-09-22T09:00:00Z", type: 'efir' }
+];
+
 export const nearbyFamilies = [
   {
     id: "fam-001",

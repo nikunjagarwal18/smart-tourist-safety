@@ -3,25 +3,21 @@
 import K from './components/k';
 import Link from 'next/link';
 
-
 // Reusable component for both login cards
 const LoginCard = ({ title, description, link, buttonColor, icon }) => (
   <Link href={link} className="block p-8 bg-white rounded-2xl shadow-xl border border-gray-200 text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl">
     {icon}
-    <h3 className="mt-4 text-2xl font-bold text-gray-900">{title}</h3>
-    <p className="mt-2 text-gray-600">{description}</p>
+    <h3 className="mt-4 text-2xl font-bold text-black">{title}</h3>
+    <p className="mt-2 text-black">{description}</p>
     <button className={`mt-6 w-full py-3 px-4 hover:cursor-pointer border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-${buttonColor}-600 hover:bg-${buttonColor}-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${buttonColor}-500 transition-all`}>
       Login as {title}
     </button>
   </Link>
 );
 
-
-
-
 export default function LandingPage() {
   return (
-    <div className="font-sans bg-gray-100 min-h-screen w-full text-gray-800">
+    <div className="font-sans bg-gray-100 min-h-screen w-full text-black">
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg py-4">
         <div className="container mx-auto px-4 text-center">
@@ -32,10 +28,10 @@ export default function LandingPage() {
       <main className="container mx-auto px-4 py-8 md:py-16">
         {/* Hero Section */}
         <section className="text-center py-12 md:py-16">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-black tracking-tight leading-tight">
             Advanced Monitoring & <br /> Rapid Response
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-black">
             A unified platform for ensuring tourist safety through real-time tracking, instant alerts, and streamlined incident management.
           </p>
         </section>
@@ -51,7 +47,7 @@ export default function LandingPage() {
 
         {/* Login Cards Section */}
         <section className="py-8 md:py-12">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">Choose Your Login</h2>
+          <h2 className="text-3xl font-bold text-center text-black mb-8">Choose Your Login</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
             <LoginCard
               title="Police"

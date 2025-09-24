@@ -7,6 +7,8 @@ import FamilyCard from "../dashboard/FamilyCard";
 import { AlertIcon } from "../icons/AlertIcon";
 import { IncidentIcon } from "../icons/IncidentIcon";
 import { FamilyIcon } from "../icons/FamilyIcon";
+import Link from 'next/link';
+import { FaFire } from "react-icons/fa";
 
 
 export default function Sidebar({
@@ -22,6 +24,12 @@ export default function Sidebar({
   return (
     <aside className={`w-96 bg-gray-50 border-r border-gray-200 flex flex-col h-full absolute left-0 top-0 bottom-0 z-50 transform transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       {/* Panic Alerts Section */}
+      <div className="p-4 border-b border-border-color">
+        <Link href="/police/heatmap" className="flex items-center p-3 rounded-lg text-gray-200 bg-gray-700/50 hover:bg-gray-700 transition-colors">
+          <FaFire className="w-6 h-6 mr-3 text-red-400" />
+          <span className="font-bold text-lg">Crime Heatmap & History</span>
+        </Link>
+      </div>
       <div className="p-4 border-b border-gray-200">
         <h2 className="font-bold text-lg text-red-600 flex items-center">
           <AlertIcon className="w-6 h-6 mr-2" />
