@@ -24,7 +24,7 @@ export default function MapView({ alerts, incidents, families, center, zoom = 12
       // We create the icons here, once Leaflet is loaded
       setIcons({
         police: new L.Icon({
-          iconUrl: MdLocalPolice,
+          iconUrl: 'https://tse1.mm.bing.net/th/id/OIP.FuznOcqy-tJte3deL3us-wHaHa?rs=1&pid=ImgDetMain&o=7&rm=3',
           iconSize: [30, 30],
           iconAnchor: [25, 50],
           popupAnchor: [0, -50],
