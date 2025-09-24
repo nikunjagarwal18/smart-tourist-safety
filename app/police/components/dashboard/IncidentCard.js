@@ -1,6 +1,5 @@
 "use client";
 
-// Card for displaying a user-reported incident in the sidebar.
 export default function IncidentCard({ incident, isSelected, onClick }) {
     const timeSince = (date) => {
         const seconds = Math.floor((new Date() - new Date(date)) / 1000);
@@ -13,19 +12,20 @@ export default function IncidentCard({ incident, isSelected, onClick }) {
     };
   
   return (
+    // UPDATED: Styling to match AlertCard but with amber colors
     <div
       onClick={onClick}
       className={`p-3 mb-2 rounded-lg cursor-pointer transition-all duration-200 border-l-4 ${
         isSelected
-          ? "bg-amber-100 border-amber-500 shadow-md"
-          : "bg-white border-amber-300 hover:bg-amber-50 hover:shadow-sm"
+          ? "bg-amber-500/20 border-amber-500 shadow-lg shadow-amber-500/20"
+          : "bg-card-background border-amber-800 hover:bg-gray-700"
       }`}
     >
       <div className="flex justify-between items-center">
-        <p className="font-bold text-gray-800">{incident.type}</p>
-        <p className="text-xs text-gray-500">{timeSince(incident.timestamp)}</p>
+        <p className="font-bold text-gray-100">{incident.type}</p>
+        <p className="text-xs text-amber-400">{timeSince(incident.timestamp)}</p>
       </div>
-      <p className="text-sm text-gray-600">Reported by: {incident.reportedBy.name}</p>
+      <p className="text-sm text-gray-400">Reported by: {incident.reportedBy.name}</p>
     </div>
   );
 }
