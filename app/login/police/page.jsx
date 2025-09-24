@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 // This is a self-contained component for the login/signup page.
 // The Navbar and useRouter components have been removed as they are external dependencies.
@@ -21,6 +22,7 @@ export default function App() {
     setLoginType(type);
     setMessage({ text: '', type: '' });
     setFormData({ name: '', id: '', location: '', email: '', phone: '' });
+    
   };
 
   const handleLogin = async (e) => {
@@ -184,7 +186,7 @@ export default function App() {
               disabled={isLoading}
               className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all transform hover:scale-105 disabled:bg-blue-400 disabled:cursor-not-allowed"
             >
-              {isLoading ? 'Processing...' : (loginType === 'login' ? 'Login' : 'Signup')}
+              <Link href="/police" >{isLoading ? 'Processing...' : (loginType === 'login' ? 'Login' : 'Signup')}</Link>
             </button>
           </div>
         </form>
